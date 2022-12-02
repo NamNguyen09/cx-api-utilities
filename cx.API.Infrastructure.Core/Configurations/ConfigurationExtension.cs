@@ -9,12 +9,11 @@ namespace cx.API.Infrastructure.Core.Configurations
         public static IConfigurationBuilder AddJsonConfigurationFiles(this IConfigurationBuilder app, string environmentName)
         {
             if (app == null) return new ConfigurationBuilder();
-            app.Sources.Clear();
             //Read Configuration from appSettings
-            IConfigurationBuilder configBuilder = app.AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true);
+            app.AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true);
             if (!string.IsNullOrWhiteSpace(environmentName) && File.Exists($"appsettings.{environmentName}.json"))
             {
-                configBuilder.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
+                app.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
             }
 
             return app;
