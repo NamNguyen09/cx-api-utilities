@@ -6,10 +6,23 @@ namespace cx.API.Infrastructure.Core.Configurations
 {
     public static class ConfigurationExtension
     {
+        public static IConfigurationBuilder AddJsonConfigurationFiles(IConfigurationBuilder app, string environmentName)
+        {
+            if (app == null) return new ConfigurationBuilder();
+            app.Sources.Clear();
+            //Read Configuration from appSettings
+            IConfigurationBuilder configBuilder = app.AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true);
+            if (!string.IsNullOrWhiteSpace(environmentName) && File.Exists($"appsettings.{environmentName}.json"))
+            {
+                configBuilder.AddJsonFile($"appsettings.{environmentName}.json", optional: true, reloadOnChange: true);
+            }
+
+            return app;
+        }
         public static IConfigurationRoot? ExpandEnvironmentVariables(this IConfigurationRoot configurtion, dynamic builder)
         {
-            if (configurtion == null) return configurtion;
-            if (builder == null) return configurtion;
+            if (configurtion == null) return null;
+            if (builder == null) return null;
             IEnumerable<IConfigurationProvider> providers = configurtion.Providers.Where(t => t.GetType() == typeof(JsonConfigurationProvider)).AsEnumerable();
             foreach (var item in providers)
             {

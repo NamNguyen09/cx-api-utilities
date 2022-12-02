@@ -9,6 +9,8 @@
     <PackageProjectUrl>https://github.com/NamNguyen09/cx-api-utilities</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NamNguyen09/cx-api-utilities</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReleaseNotes>Add method AddJsonConfigurationFiles</PackageReleaseNotes>
+    <PackageTags>.NET 6, Add json configuration file</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
