@@ -6,7 +6,7 @@ namespace cx.API.Infrastructure.Core.Configurations
 {
     public static class ConfigurationExtension
     {
-        public static IConfigurationBuilder AddJsonConfigurationFiles(IConfigurationBuilder app, string environmentName)
+        public static IConfigurationBuilder AddJsonConfigurationFiles(this IConfigurationBuilder app, string environmentName)
         {
             if (app == null) return new ConfigurationBuilder();
             app.Sources.Clear();
