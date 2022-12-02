@@ -9,9 +9,9 @@
     <PackageProjectUrl>https://github.com/NamNguyen09/cx-api-utilities</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NamNguyen09/cx-api-utilities</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageReleaseNotes>Add method AddJsonConfigurationFiles</PackageReleaseNotes>
+    <PackageReleaseNotes>Remove app.Source.Clear()</PackageReleaseNotes>
     <PackageTags>.NET6, JsonConfiguration</PackageTags>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
