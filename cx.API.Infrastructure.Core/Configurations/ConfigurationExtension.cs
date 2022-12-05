@@ -32,6 +32,7 @@ namespace cx.API.Infrastructure.Core.Configurations
                 if (settingVariables == null) continue;
                 foreach ((string key, string value) in ((Dictionary<string, string>)settingVariables).Where(t => t.Key != null && t.Value != null))
                 {
+                    if (!value.StartsWith("%") && !value.EndsWith("%")) continue;
                     string settingValue = value;
                     settingValue = Environment.ExpandEnvironmentVariables(settingValue);
                     builder.Configuration[key] = settingValue;
