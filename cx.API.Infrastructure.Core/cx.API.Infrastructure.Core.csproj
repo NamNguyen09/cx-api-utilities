@@ -11,7 +11,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReleaseNotes>Fix cannot override the appsetting variables by environment variables</PackageReleaseNotes>
     <PackageTags>.NET6, JsonConfiguration</PackageTags>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
