@@ -23,6 +23,8 @@ namespace cx.API.Infrastructure.Core.Configurations
             if (configurtion == null) return null;
             if (builder == null) return null;
             IEnumerable<IConfigurationProvider> providers = configurtion.Providers.Where(t => t.GetType() == typeof(JsonConfigurationProvider)).AsEnumerable();
+            string? envVariablesConfig = builder.Configuration["ENV_VARIABLES"];
+            string[]? envVariables = envVariablesConfig != null ? envVariablesConfig.Split(",") : null;
             foreach (var item in providers)
             {
                 PropertyInfo? propInfo = typeof(JsonConfigurationProvider).GetProperty("Data", BindingFlags.NonPublic |
@@ -32,7 +34,8 @@ namespace cx.API.Infrastructure.Core.Configurations
                 if (settingVariables == null) continue;
                 foreach ((string key, string value) in ((Dictionary<string, string>)settingVariables).Where(t => t.Key != null && t.Value != null))
                 {
-                    if (!value.StartsWith("%") && !value.EndsWith("%")) continue;
+                    if ((envVariables != null && !envVariables.Any(s => value.Contains(s)))
+                        || !value.Contains('%')) continue;
                     string settingValue = value;
                     settingValue = Environment.ExpandEnvironmentVariables(settingValue);
                     builder.Configuration[key] = settingValue;
