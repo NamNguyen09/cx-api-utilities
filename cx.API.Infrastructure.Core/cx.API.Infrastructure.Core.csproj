@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/NamNguyen09/cx-api-utilities</PackageProjectUrl>
     <RepositoryUrl>https://github.com/NamNguyen09/cx-api-utilities</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageReleaseNotes>Remove app.Source.Clear()</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix cannot override the appsetting variables by environment variables</PackageReleaseNotes>
     <PackageTags>.NET6, JsonConfiguration</PackageTags>
     <Version>1.0.4</Version>
   </PropertyGroup>
