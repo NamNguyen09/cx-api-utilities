@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>cx.API.Infrastructure</id>
+    <title>cx.API.Infrastructure</title>
+    <version>6.14</version>
+    <authors>Tom Lee</authors>
+    <owners>Tom Lee</owners>  
+    <projectUrl>https://github.com/NamNguyen09/cx-api-utilities</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Contains helpers that can be used for Net48 projects</description>
+    <releaseNotes>Add ExpandVariable string helper</releaseNotes>
+  </metadata>
+</package>

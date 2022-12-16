@@ -15,3 +15,5 @@ cx.API.Infrastructure.Core/bin/
 cx.API.Infrastructure.Core/obj/
 .vs/
 *.user
+/cx.API.Infrastructure/bin/
+/cx.API.Infrastructure/obj/
